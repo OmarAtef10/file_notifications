@@ -11,6 +11,7 @@ SUB_FOLDERS_FILES = {folder: [] for folder in BASE_SUB_FOLDERS}
 
 
 def check_if_today_folder_exists():
+    TODAY_DATE = datetime.datetime.now().strftime('%Y-%m-%d')
     if not os.path.exists(os.path.join(BASE_FOLDER_PATH, TODAY_DATE)):
         os.mkdir(os.path.join(BASE_FOLDER_PATH, TODAY_DATE))
         create_sub_folders()
@@ -27,16 +28,6 @@ def create_sub_folders():
     SUB_FOLDERS_FILES = {folder: [] for folder in BASE_SUB_FOLDERS}
 
 
-
-
-# def populate_sub_folders_files():
-#     if TODAY_CREATED:
-#         return
-#
-#     else:
-#         SUB_FOLDERS_FILES.clear()
-#         for folder in BASE_SUB_FOLDERS:
-#             SUB_FOLDERS_FILES[folder] = []
 
 
 def check_for_new_files():
